@@ -1,8 +1,10 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 
-const Error = () => {
+const Errorpage = () => {
     return (
-        <div className="bg-gray-100 flex items-center justify-center h-screen">
+        
+        <div className="bg-gray-100 flex items-center justify-center      h-screen">
             <div className="text-center p-6 bg-white rounded-lg shadow-md max-w-lg">
                 <h1 className="text-4xl font-bold text-red-500 mb-4">404</h1>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">Page Not Found</h2>
@@ -12,7 +14,8 @@ const Error = () => {
                 </Link>
             </div>
         </div >
+        
     );
 };
 
-export default Error;
+export default Errorpage;

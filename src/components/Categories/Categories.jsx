@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-const Categories = ({ categories }) => {
+const Categories = ({categories}) => {
 
 
     return (
-        <div className='px-4'>
+        <div className='px-4 w-1/5'>
             <div className='border p-4 rounded-lg shadow-lg bg-white'>
-                <div className='flex flex-col space-y-4'>
+                <div className='flex flex-col justify-start space-y-4'>
             
                     {
                         categories.map(category => (
@@ -17,7 +17,7 @@ const Categories = ({ categories }) => {
                                 className={({isActive})=> `btn ${isActive?'bg-[#9538E2] text-white':'hover:bg-[#9538E2]/50 hover:text-white text-black'} `}
                             >
             
-                                    {category.category}
+                                {category.category}
             
                             </NavLink>
                         ))
@@ -29,6 +29,7 @@ const Categories = ({ categories }) => {
 };
 
 export default Categories;
+
 
 
 Categories.propTypes = {
