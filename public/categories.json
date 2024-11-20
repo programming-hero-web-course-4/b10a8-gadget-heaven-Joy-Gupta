@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "category": "Smartphones"
+    },
+    {
+        "id": 2,
+        "category": "Laptops"
+    },
+    {
+        "id": 3,
+        "category": "Earbuds"
+    },
+    {
+        "id": 4,
+        "category": "Drones"
+    },
+    {
+        "id": 5,
+        "category": "Action-cameras"
+    }
+]

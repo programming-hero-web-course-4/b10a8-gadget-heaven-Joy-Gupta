@@ -1,0 +1,241 @@
+[
+    {
+        "id": "P001",
+        "title": "Apple iPhone 15 Pro Max",
+        "image": "https://i.ibb.co/CWd61MG/Apple-i-Phone-15-Pro-Max.jpg",
+        "category": "Smartphones",
+        "price": 1299,
+        "description": "The ultimate smartphone experience with an A17 chip and superior camera.",
+        "specification": [
+            "6.7-inch OLED display",
+            "A17 Bionic chip",
+            "5G support",
+            "Triple-camera system"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "P002",
+        "title": "Samsung Galaxy S23 Ultra",
+        "image": "https://i.ibb.co/F0q2NKC/Samsung-Galaxy-S23-Ultra.jpg",
+        "category": "Smartphones",
+        "price": 1199,
+        "description": "Powerful performance with an enhanced S Pen and advanced AI camera.",
+        "specification": [
+            "6.8-inch AMOLED display",
+            "Snapdragon 8 Gen 2",
+            "200MP camera",
+            "5G and S Pen support"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "P003",
+        "title": "Google Pixel 7",
+        "image": "https://i.ibb.co/Mhx0xL0/Pixel-7A.webp",
+        "category": "Smartphones",
+        "price": 649,
+        "description": "Smooth performance with Google’s AI-powered camera technology.",
+        "specification": [
+            "6.3-inch OLED display",
+            "Google Tensor G2 chip",
+            "50MP dual camera",
+            "5G connectivity"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "P004",
+        "title": "OnePlus 11",
+        "image": "https://i.ibb.co/T8x3FkR/One-Plus-11.webp",
+        "category": "Smartphones",
+        "price": 749,
+        "description": "Flagship performance and design with advanced OxygenOS experience.",
+        "specification": [
+            "6.7-inch Fluid AMOLED display",
+            "Snapdragon 8 Gen 2",
+            "80W fast charging",
+            "Triple-camera system"
+        ],
+        "availability": false,
+        "rating": 3.2
+    },
+    {
+        "id": "P005",
+        "title": "Sony Xperia 1 IV",
+        "image": "https://i.ibb.co/42x37T4/Sony-Xperia-1-IV.jpg",
+        "category": "Smartphones",
+        "price": 1099,
+        "description": "Innovative camera technology with 4K display for immersive visuals.",
+        "specification": [
+            "6.5-inch 4K OLED display",
+            "Snapdragon 8 Gen 1",
+            "5G connectivity",
+            "Quad-camera system"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "id": "P006",
+        "title": "Motorola Edge 30 Ultra",
+        "image": "https://i.ibb.co/Jyf8Kdq/Motorola-Edge-30-Ultra.jpg",
+        "category": "Smartphones",
+        "price": 899,
+        "description": "Stunning 200MP camera and premium build for photography enthusiasts.",
+        "specification": [
+            "6.7-inch pOLED display",
+            "Snapdragon 8 Gen 1",
+            "200MP triple-camera",
+            "5G connectivity"
+        ],
+        "availability": true,
+        "rating": 3.5
+    },
+    {
+        "id": "P007",
+        "title": "Apple MacBook Air M2",
+        "image": "https://i.ibb.co/wCdJdQB/Apple-Mac-Book-Air-M2.jpg",
+        "category": "Laptops",
+        "price": 1199,
+        "description": "Lightweight and powerful laptop with M2 chip and Retina display.",
+        "specification": [
+            "13.6-inch Retina display",
+            "M2 chip",
+            "8GB RAM",
+            "256GB SSD"
+        ],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "id": "P008",
+        "title": "Dell XPS 13",
+        "image": "https://i.ibb.co/8BpQzJM/Dell-XPS-13.jpg",
+        "category": "Laptops",
+        "price": 999,
+        "description": "Ultra-thin and premium laptop with InfinityEdge display and great performance.",
+        "specification": [
+            "13.4-inch FHD+ display",
+            "Intel Core i7",
+            "16GB RAM",
+            "512GB SSD"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "P009",
+        "title": "Microsoft Surface Laptop 5",
+        "image": "https://i.ibb.co/BqkFQqq/Microsoft-Surface-Laptop-5.jpg",
+        "category": "Laptops",
+        "price": 1099,
+        "description": "Slim, lightweight, and powerful with Windows 11 and touch support.",
+        "specification": [
+            "13.5-inch PixelSense display",
+            "Intel Core i5",
+            "512GB SSD",
+            "12 hours battery life"
+        ],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
+        "id": "P010",
+        "title": "Bose QuietComfort Earbuds II",
+        "image": "https://i.ibb.co/1GwrttY/Bose-Quiet-Comfort-Earbuds-II.webp",
+        "category": "Earbuds",
+        "price": 279,
+        "description": "Industry-leading noise cancellation in comfortable wireless earbuds.",
+        "specification": [
+            "Up to 6 hours battery life",
+            "IPX4 sweat and water resistant",
+            "Bluetooth 5.1",
+            "Customizable ANC"
+        ],
+        "availability": true,
+        "rating": 4.6
+    },
+    {
+        "id": "P011",
+        "title": "Sony WF-1000XM4",
+        "image": "https://i.ibb.co/XkH3mxJ/Sony-WF-1000-XM4.jpg",
+        "category": "Earbuds",
+        "price": 299,
+        "description": "Premium sound quality with adaptive noise-canceling technology.",
+        "specification": [
+            "8 hours battery life",
+            "High-Resolution Audio support",
+            "Bluetooth 5.2",
+            "Noise-canceling"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "P012",
+        "title": "DJI Mini 3 Pro",
+        "image": "https://i.ibb.co/yNLGSKm/DJI-Mini-3-Pro.webp",
+        "category": "Drones",
+        "price": 799,
+        "description": "Lightweight, portable drone with excellent 4K video recording capabilities.",
+        "specification": [
+            "4K HDR video",
+            "3-axis gimbal",
+            "34 minutes flight time",
+            "Obstacle sensing"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "P013",
+        "title": "DJI Air 2S",
+        "image": "https://i.ibb.co/BwCYyVF/DJI-Air-2-S.jpg",
+        "category": "Drones",
+        "price": 999,
+        "description": "Powerful drone with a 1-inch sensor for stunning photos and videos.",
+        "specification": [
+            "5.4K video recording",
+            "1-inch CMOS sensor",
+            "31 minutes flight time",
+            "Intelligent flight modes"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "id": "P014",
+        "title": "GoPro HERO 11",
+        "image": "https://i.ibb.co/GsFqCNX/Go-Pro-HERO-11.jpg",
+        "category": "Action-cameras",
+        "price": 449,
+        "description": "Rugged and waterproof action camera with 5.3K video capability.",
+        "specification": [
+            "5.3K video resolution",
+            "Waterproof up to 10m",
+            "HyperSmooth 5.0 stabilization"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "id": "P015",
+        "title": "Insta360 X3",
+        "image": "https://i.ibb.co/Sx1mT49/Insta360-X3.jpg",
+        "category": "Action-cameras",
+        "price": 529,
+        "description": "360-degree camera with high-resolution video and innovative editing tools.",
+        "specification": [
+            "5.7K 360-degree video",
+            "FlowState stabilization",
+            "Waterproof",
+            "Built-in touch screen"
+        ],
+        "availability": true,
+        "rating": 4.6
+    }
+]
