@@ -10,6 +10,11 @@ import Root from './components/Root/Root.jsx';
 import Errorpage from './components/Errorpage/Errorpage.jsx';
 import Home from './components/Home/Home.jsx';
 import GadgetCards from './components/GadgetCards/GadgetCards.jsx';
+import GadgetInfo from './components/GadgetInfo/GadgetInfo.jsx';
+import Statictics from './components/Statictics/Statictics.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
+
+
 
 
 const router = createBrowserRouter([
@@ -34,6 +39,19 @@ const router = createBrowserRouter([
             loader: () => fetch('../gadgets.json')
           },
         ],
+      },
+      {
+        path: '/gadget/:id',
+        element: <GadgetInfo></GadgetInfo>,
+        loader: () => fetch('../gadgets.json')
+      },
+      {
+        path: '/Statictics',
+        element:<Statictics></Statictics>
+      },
+      {
+        path: '/Dashboard',
+        element:<Dashboard></Dashboard>
       },
       
     ]

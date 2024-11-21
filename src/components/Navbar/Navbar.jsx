@@ -7,9 +7,9 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/listedBooks">Listed Books</NavLink></li>
-        <li><NavLink to="/">Dashboard</NavLink></li>
-        <li><NavLink to="/">FAQs</NavLink></li>
+        <li><NavLink to="/Statictics">Statistics</NavLink></li>
+        <li><NavLink to="/Dashboard">Dashboard</NavLink></li>
+        
     </>
 
     return (
@@ -45,8 +45,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
             <div class=" flex items-center gap-2 ">
-                        <h1 class=" btn btn-circle bg-white"><FaShoppingCart /></h1>
-                        <h1 class=" btn btn-circle bg-white"><GiEternalLove /></h1>
+                        <h1 class=" btn btn-circle hover:bg-[#9538E2]"><FaShoppingCart size={25} /></h1>
+                        <h1 class=" btn btn-circle hover:bg-[#9538E2]"><GiEternalLove size={25} /></h1>
                     </div>
             </div>
         </div>
