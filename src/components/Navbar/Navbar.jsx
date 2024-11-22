@@ -1,20 +1,40 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaShoppingCart } from "react-icons/fa";
-import { GiEternalLove } from "react-icons/gi";
+import { NavLink,Link,useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { getCart } from "../Database/AddToDB";
+import { CiHeart } from "react-icons/ci";
+import { IoCartOutline } from "react-icons/io5";
+
 
 const Navbar = () => {
 
+    // nav link color 
+    const getNavLinkActiveClass = ({ isActive }) => `${isActive ? 'font-bold underline' : 'hover:font-bold'}`;
+
+    // change navebar color based on navigation page
+    const { pathname } = useLocation();
+    
+    const navbarBgClass = pathname === '/' ? 'bg-[#9538E2] text-white' : 'bg-white text-[#9538E2]';
+
+    const [cartCount,setCartCount] = useState(0); // State to track the number of items in the cart
+
+    // Retrieve and update the cart count whenever the component mounts
+    useEffect(() => {
+        const cartItems = getCart();
+        setCartCount(cartItems.length);
+    }, [])
+
+
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/Statictics">Statistics</NavLink></li>
-        <li><NavLink to="/Dashboard">Dashboard</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to="/">Home</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to="/Statictics">Statistics</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to="/Dashboard">Dashboard</NavLink></li>
         
     </>
 
     return (
-        <div className="navbar bg-white text-black">
-            <div className="navbar-start">
+        <div className={`navbar ${navbarBgClass}`}>
+            <div className="navbar-start mx-5">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg
@@ -36,18 +56,26 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Gadget Heaven</a>
+                <a className="text-xl font-bold">Gadget Heaven</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-            <div class=" flex items-center gap-2 ">
-                        <h1 class=" btn btn-circle hover:bg-[#9538E2]"><FaShoppingCart size={25} /></h1>
-                        <h1 class=" btn btn-circle hover:bg-[#9538E2]"><GiEternalLove size={25} /></h1>
-                    </div>
+            <div className="navbar-end gap-4">
+                <Link to='/dashboard' className="btn rounded-full "> <IoCartOutline size={18} />
+
+                    {
+                        cartCount > 0 && (
+                            <span className="badge bg-green-400
+                            text-white rounded-full px-2 py-1 text-xs">
+                            {cartCount}
+                            </span>
+                        )
+                    }
+                </Link>
+                <Link to='/dashboard' className="btn rounded-full" state={{ activeTab: 'wishlist' }}> <CiHeart size={18} /></Link>
             </div>
         </div>
     );

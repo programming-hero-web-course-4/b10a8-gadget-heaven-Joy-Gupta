@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
-// import { getCart, getWishList } from "../Utils/AddToDB";
+import { getCart, getWishList } from "../Database/AddToDB";
 import { useLocation, useNavigate } from "react-router-dom";
 import congratsImg from '../../assets/Group.png';
+import PropTypes from 'prop-types';
+import Heading from "../Heading/Heading";
 
 
 const Dashboard = () => {
+
     const [wishlist, setWishlist] = useState([]);
     const [cartList, setCartList] = useState([]);
     const [activeList, setActiveList] = useState('cart');
+    
+    
     const [totalCost, setTotalCost] = useState(0);
     const [finalTotalCost, setFinalTotalCost] = useState(0);
     const location = useLocation();
@@ -16,20 +21,20 @@ const Dashboard = () => {
 
 
     useEffect(() => {
-        // const favorites = getWishList()
-        // setWishlist(favorites);
+        const favorites = getWishList()
+        setWishlist(favorites);
 
-        // const cartItems = getCart();
-        // setCartList(cartItems);
+        const cartItems = getCart();
+        setCartList(cartItems);
 
         // // Calculate total cost of items in the cart
-        // const cost = (cartItems || []).reduce((acc, item) => acc + (item.price || 0), 0);
-        // setTotalCost(cost);
+        const cost = (cartItems || []).reduce((acc, item) => acc + (item.price || 0), 0);
+        setTotalCost(cost);
 
         // Set the active list based on state passed from Navbar (wishlist or cart)
-        // if (location.state?.activeTab === "wishlist") {
-        //     setActiveList("wishlist");
-        // }
+        if (location.state?.activeTab === "wishlist") {
+            setActiveList("wishlist");
+        }
 
     }, [location.state])
 
@@ -42,8 +47,12 @@ const Dashboard = () => {
     };
 
     // functions to toggle between cart and wishlist
-    // const handleShowCart = () => setActiveList('cart');
-    // const handleShowWishlist = () => setActiveList('wishlist')
+    const handleShowCart = () => setActiveList('cart');
+    
+    const handleShowWishlist = () => setActiveList('wishlist')
+   
+
+    
 
     // Function to handle purchase
     const handlePurchase = () => {
@@ -56,7 +65,7 @@ const Dashboard = () => {
         setTotalCost(0);
 
     //     // Update local storage to clear cart
-    //     localStorage.setItem("cart", JSON.stringify([]));
+        localStorage.setItem("cart", JSON.stringify([]));
      };
 
     // Redirect to home page on modal close
@@ -68,11 +77,20 @@ const Dashboard = () => {
         <div>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
+
             <div className="text-center bg-[#9538E2] text-white py-16">
                 <h1 className='lg:text-5xl font-bold'>Dashboard</h1>
-                <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-             </div>
+                <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories,Make the purchase fast before the stock will empty duo to huge market demand, we have it all!</p>
 
+                <Heading
+                activeList={activeList}
+                onShowCart={handleShowCart}
+                onShowWishList={handleShowWishlist}
+            />
+                
+            </div>
+                
+            
 
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
@@ -97,7 +115,8 @@ const Dashboard = () => {
             {/* modal finishes */}
 
             
-            <div className="flex justify-between my-12 w-11/12 mx-auto items-center mb-48">
+                
+            <div className="flex justify-between my-12 w-11/12 mx-auto items-center mb-18">
                 <h3 className="font-bold text-xl">{activeList === "cart" ? "Cart" : "Wishlist"}</h3>
                 <div className="flex items-center gap-6">
                     {activeList === "cart" && (
@@ -127,7 +146,9 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className="space-y-4 ">
+
+                            {/* Cart data display here */}
+            <div className="space-y-4 my-10">
                 {
                     activeList === "cart" && cartList.length > 0 && (cartList.map(gadget => (
 
@@ -143,7 +164,7 @@ const Dashboard = () => {
                         </div>
                     )))
                 }
-                {/* wishlist */}
+                {/* wishlist cart data show here */}
                 {
                     activeList === "wishlist" && wishlist.length > 0 && (wishlist.map(gadget => (
 
@@ -164,5 +185,6 @@ const Dashboard = () => {
         </div>
     );
 };
+
 
 export default Dashboard;

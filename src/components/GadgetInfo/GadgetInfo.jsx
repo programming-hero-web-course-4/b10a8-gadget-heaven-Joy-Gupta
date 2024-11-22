@@ -5,7 +5,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 import { IoCartOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
-// import { addToCart, addToWishList, getCart, getWishList } from "../Utils/AddToDB";
+import { addToCart, addToWishList, getCart, getWishList } from "../Database/AddToDB";
 
 
 
@@ -24,32 +24,32 @@ const GadgetInfo = () => {
         setGadget(singleData)
 
         // Check if gadget is in the wishlist
-        // const favorites = getWishList();
-        // const isExistInWishlist = favorites.find(item => item.id == singleData.id)
-        // if (isExistInWishlist) {
-        //     setIsFavorite(true)
-        // }
+        const favorites = getWishList();
+        const isExistInWishlist = favorites.find(item => item.id == singleData.id)
+        if (isExistInWishlist) {
+            setIsFavorite(true)
+        }
 
         // Check if gadget is in the cart
-        // const cart = getCart();
-        // const isExistInCart = cart.find(item => item.id == singleData.id)
-        // if (isExistInCart) {
-        //     setIsInCart(true)
-        // }
+        const cart = getCart();
+        const isExistInCart = cart.find(item => item.id == singleData.id)
+        if (isExistInCart) {
+            setIsInCart(true)
+        }
 
     }, [data, id])
 
     //   Handle wishlist btn click
-    // const handleWishList = gadget => {
-    //     addToWishList(gadget)
-    //     setIsFavorite(true)
-    // }
+    const handleWishList = gadget => {
+        addToWishList(gadget)
+        setIsFavorite(true)
+    }
 
     // handle add to cart btn link
-    // const handleAddToCart = gadget => {
-    //     addToCart(gadget)
-    //     setIsInCart(true)
-    // }
+    const handleAddToCart = gadget => {
+        addToCart(gadget)
+        setIsInCart(true)
+    }
 
     const { description,
         specification = [],
@@ -95,6 +95,9 @@ const GadgetInfo = () => {
                         </div>
                     
                     <p>Rating: {rating} </p>
+
+                    {/* 2 button  */}
+                    
                     <div className="flex items-center gap-4">
                         <button
                             onClick={() => handleAddToCart(gadget)}

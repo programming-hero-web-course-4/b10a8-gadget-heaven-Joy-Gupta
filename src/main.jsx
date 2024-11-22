@@ -47,7 +47,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/Statictics',
-        element:<Statictics></Statictics>
+        element:<Statictics></Statictics>,
+        loader:() => fetch('../categories.json'),
+        loader:() => fetch('../gadgets.json')
       },
       {
         path: '/Dashboard',
