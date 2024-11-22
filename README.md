@@ -1,6 +1,6 @@
 # Gadget Heaven 8
 
-# Live Link: 
+# Live Link: https://gadget-heaven-8-b378a0.netlify.app/
 
 It is an application for browsing and purchasing the latest tech gadgets. Users can explore various gadgets, add them to a cart or wishlist, sort and view their cart items, and proceed to purchase with a smooth interface.
 
