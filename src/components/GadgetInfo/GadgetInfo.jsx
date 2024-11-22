@@ -1,8 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-// import Heading from "../components/Heading";
-
 import { IoCartOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { addToCart, addToWishList, getCart, getWishList } from "../Database/AddToDB";

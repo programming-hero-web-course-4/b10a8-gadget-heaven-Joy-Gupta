@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <section className="bg-slate-100 text-black p-20 space-y-16 md:text-center w-full">
+            <section className="bg-slate-100 text-black p-10 space-y-16 md:text-center w-full">
 
             {/* Footer heading */}
             <div className="space-y-4">

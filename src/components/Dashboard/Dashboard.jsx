@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { getCart, getWishList } from "../Database/AddToDB";
+import { addToCart,getCart, getWishList } from "../Database/AddToDB";
 import { useLocation, useNavigate } from "react-router-dom";
 import congratsImg from '../../assets/Group.png';
 import PropTypes from 'prop-types';
 import Heading from "../Heading/Heading";
+import { IoCartOutline } from "react-icons/io5";
+
 
 
 const Dashboard = () => {
@@ -18,6 +20,7 @@ const Dashboard = () => {
     const location = useLocation();
     const [isSorted, setIsSorted] = useState(false);
     const navigate = useNavigate();
+    const [isInCart, setIsInCart] = useState(false);
 
 
     useEffect(() => {
@@ -72,6 +75,11 @@ const Dashboard = () => {
     const handleCloseModal = () => {
         navigate("/"); 
     };
+    // handle add to cart btn link
+    const handleAddToCart = gadget => {
+        addToCart(gadget)
+        setIsInCart(true)
+    }
 
     return (
         <div>
@@ -80,7 +88,7 @@ const Dashboard = () => {
 
             <div className="text-center bg-[#9538E2] text-white py-16">
                 <h1 className='lg:text-5xl font-bold'>Dashboard</h1>
-                <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories,Make the purchase fast before the stock will empty duo to huge market demand, we have it all!</p>
+                <p>Make the purchase fast before the stock will empty duo to huge market demand!</p>
 
                 <Heading
                 activeList={activeList}
@@ -176,6 +184,15 @@ const Dashboard = () => {
                                 <h3 className="font-semibold text-2xl">{gadget.title}</h3>
                                 <p className="opacity-40">{gadget.description} </p>
                                 <p className="opacity-80 font-semibold text-xl">Price: ${gadget.price} </p>
+                            </div>
+                            {/* add to cart button in wishlist section */}
+                            <div className="lg:flex mt-28 lg:mr-10">
+                            <button
+                            onClick={() => handleAddToCart(gadget)}
+                            disabled={isInCart}
+                            className="btn bg-[#9538E2] text-white">
+
+                            {isInCart ? "In Cart" : "Add to Cart"}<IoCartOutline size={24} /></button>
                             </div>
                         </div>
                     )))

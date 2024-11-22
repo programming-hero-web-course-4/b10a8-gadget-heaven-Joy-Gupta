@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink,Link,useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { getCart } from "../Database/AddToDB";
@@ -64,7 +63,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-4">
-                <Link to='/dashboard' className="btn rounded-full "> <IoCartOutline size={18} />
+                <Link to='/dashboard' className="btn rounded-full" state={{ activeTab: 'cart' }}> <IoCartOutline size={18} />
 
                     {
                         cartCount > 0 && (
